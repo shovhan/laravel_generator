@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shovhan\Generator\Generator\Common;
+namespace Shovhan\Generator\Generator;
 
 use Illuminate\Database\Eloquent\Model as IlluminateModel;
 use ReflectionException;
@@ -16,6 +16,9 @@ final class Model
     /** @var IlluminateModel */
     private $model;
 
+    /**
+     * @throws ModelException
+     */
     public function __construct(string $modelName)
     {
         if (! class_exists($modelName)) {

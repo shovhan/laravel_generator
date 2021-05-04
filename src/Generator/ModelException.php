@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shovhan\Generator\Generator\Common;
+namespace Shovhan\Generator\Generator;
 
 use Shovhan\Generator\AbstractGeneratorException;
 

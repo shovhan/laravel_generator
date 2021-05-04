@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Shovhan\Generator\Tests\Generator\Common\ModelTest;
+namespace Shovhan\Generator\Tests\Generator\ModelTest;
 
-use Shovhan\Generator\Generator\Common\Model;
-use Shovhan\Generator\Generator\Common\ModelException;
+use Shovhan\Generator\Generator\Model;
+use Shovhan\Generator\Generator\ModelException;
 use Shovhan\Generator\Tests\TestCase;
 
 final class CreateModelTest extends TestCase

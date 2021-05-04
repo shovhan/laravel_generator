@@ -1,6 +1,8 @@
 <?php
 
-namespace Shovhan\Generator\Generator\Common;
+namespace Shovhan\Generator\Generator;
+
+use Shovhan\Generator\Generator\Model;
 
 interface Generator
 {
@@ -17,6 +19,7 @@ interface Generator
      * Determine if class for model already exists
      *
      * @param Model $model
+     *
      * @return bool
      */
     public function hasCustomClass(Model $model): bool;
@@ -25,6 +28,7 @@ interface Generator
      * Get custom class name
      *
      * @param Model $model
+     *
      * @return string
      */
     public function getCustomClass(Model $model): string;

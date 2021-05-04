@@ -5,29 +5,29 @@ declare(strict_types=1);
 namespace Shovhan\Generator\Command;
 
 use Illuminate\Console\Command;
-use Shovhan\Generator\Generator\Common\Model;
+use Shovhan\Generator\Generator\Model;
 use Shovhan\Generator\Generator\Target\Collection\CollectionGenerator;
 
 final class GenerateCollectionCommand extends Command
 {
     /** @var string */
-    protected $signature = 'ecosystem-generator:collection {model : Class name of the Model}';
+    protected $signature = 'make:collection {model : Class name of the Model}';
 
     /** @var string */
     protected $description = 'Generate Collection class for Model';
 
     /** @var CollectionGenerator */
-    private $generatorFacade;
+    private $generator;
 
-    public function __construct(CollectionGenerator $generatorFacade)
+    public function __construct(CollectionGenerator $generator)
     {
         parent::__construct();
-        $this->generatorFacade = $generatorFacade;
+        $this->generator = $generator;
     }
 
     public function handle(): void
     {
         $model = new Model($this->argument('model'));
-        $this->generatorFacade->generateForModel($model);
+        $this->generator->generateForModel($model);
     }
 }

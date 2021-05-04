@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Shovhan\Generator\Tests\Generator\Common\ModelTest;
+namespace Shovhan\Generator\Tests\Generator\ModelTest;
 
 use Illuminate\Database\Eloquent\Model as EloquentModel;
-use Shovhan\Generator\Generator\Common\Model;
+use Shovhan\Generator\Generator\Model;
 use Shovhan\Generator\Tests\TestCase;
 
 final class ModelTest extends TestCase
@@ -24,7 +24,7 @@ final class ModelTest extends TestCase
         self::assertTrue($model->hasOwnMethod('newEloquentBuilder'));
     }
 
-    public function testCantDetectOwnMethodIfNotExists(): void
+    public function testCanDetectThatMethodNotExists(): void
     {
         $modelClass = new class extends EloquentModel {};
 
@@ -37,6 +37,6 @@ final class ModelTest extends TestCase
     {
         $class = new class extends EloquentModel {};
         $model = new Model(get_class($class));
-        self::assertSame($model->getModel(), $model->getModel());
+        self::assertEquals($class, $model->getModel());
     }
 }

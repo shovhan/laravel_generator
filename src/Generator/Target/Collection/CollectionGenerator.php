@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Shovhan\Generator\Generator\Target\Collection;
 
-use Shovhan\Generator\Generator\Common\Generator;
-use Shovhan\Generator\Generator\Common\Model;
+use Shovhan\Generator\Generator\Generator;
+use Shovhan\Generator\Generator\Model;
 
 final class CollectionGenerator implements Generator
 {
